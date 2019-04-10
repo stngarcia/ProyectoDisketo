@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model.sesionbeans;
 
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 /**
  *
@@ -60,5 +56,12 @@ public abstract class AbstractFacade<T> {
         javax.persistence.Query q = getEntityManager().createQuery(cq);
         return ((Long) q.getSingleResult()).intValue();
     }
-    
+
+    public List<T> findNamedQuery(String namedQueryName) {
+        return getEntityManager().createNamedQuery(namedQueryName).getResultList();
+    }
+
+    public List<T> findNamedQuery(String namedQueryName, String parameterName, Object parameterValue) {
+        return getEntityManager().createNamedQuery(namedQueryName).setParameter(parameterName, parameterValue).getResultList();
+    }
 }

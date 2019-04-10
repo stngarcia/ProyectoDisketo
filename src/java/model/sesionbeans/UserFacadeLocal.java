@@ -29,5 +29,9 @@ public interface UserFacadeLocal {
     List<User> findRange(int[] range);
 
     int count();
-    
+
+    List<User> findNamedQuery(String namedQueryName);
+
+    List<User> findNamedQuery(String namedQueryName, String parameterName, Object parameterValue);
+
 }

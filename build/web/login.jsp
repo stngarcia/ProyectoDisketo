@@ -21,7 +21,7 @@
                     <p class="text-center text-muted">Ingresa tus credenciales y
                         comienza a registrar tus discografías.</p>
                     <form id="formularioLogin" name="formularioLogin" method="post" class="form-horizontal"
-                          action="login">
+                          action="Login">
                         <div class="form-group">
                             <label class="col-sm-4 control-label" for="email">Email</label>
                             <div class="col-sm-5">
