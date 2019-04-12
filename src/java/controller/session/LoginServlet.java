@@ -29,10 +29,17 @@ public class LoginServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String myEmail = request.getParameter("email");
         String myPwd = request.getParameter("pwd");
-        PrintWriter printWriter = new PrintWriter("file.txt");
-        printWriter.println("Weeeena aqui estoy!");
-        printWriter.println(myEmail);
-        printWriter.close();
+        this.myUser = this.myUserSB.findNamedQuery("User.findByEmail", "email", myEmail);
+        if (this.myUser.size()==0){
+            getServletContext().getRequestDispatcher("/usuario-acceso-denegado.jsp").forward(request, response);
+            return;
+        }
+        User myUserfound = this.myUser.get(0);
+        PrintWriter out = response.getWriter();
+        out.print(myUserfound.getNombre());
+        out.print(this.myUser.size());
+        out.print(myEmail);
+        out.close();
     }
 
 }
