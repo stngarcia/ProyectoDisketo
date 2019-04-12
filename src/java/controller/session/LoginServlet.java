@@ -1,5 +1,7 @@
 package controller.session;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,18 +29,20 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String myEmail = request.getParameter("email");
-        String myPwd = request.getParameter("pwd");
-        this.myUser = this.myUserSB.findNamedQuery("User.findByEmail", "email", myEmail);
+        Map<String, String> myParameters = new HashMap<String, String>();
+        myParameters.put("email", request.getParameter("email"));
+        myParameters.put("password", request.getParameter("pwd"));
+        this.myUser = this.myUserSB.findNamedQuery("User.findLogin", myParameters);
+        UserLogged myUserLogged= UserLogged.createUserLog();
         if (this.myUser.size()==0){
             getServletContext().getRequestDispatcher("/usuario-acceso-denegado.jsp").forward(request, response);
             return;
         }
         User myUserfound = this.myUser.get(0);
+        myUserLogged.setUser_name(myUserfound.getNombre()+''+myUserfound.getApellido());
         PrintWriter out = response.getWriter();
-        out.print(myUserfound.getNombre());
-        out.print(this.myUser.size());
-        out.print(myEmail);
+        out.print(myUserLogged.get);
+        out.print(myUserfound.g);
         out.close();
     }
 

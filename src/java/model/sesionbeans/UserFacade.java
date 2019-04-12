@@ -1,5 +1,6 @@
 package model.sesionbeans;
 
+import java.util.Map;
 import entity.User;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;

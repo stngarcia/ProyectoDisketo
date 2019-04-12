@@ -15,15 +15,19 @@ public class UserLogged {
     private String user_name;
     private String date_login;
 
+    private boolean isLogged;
+
 // Contructores
     private UserLogged() {
         this.user_name = "Anonimo";
         this.date_login = this.getCurrentDate();
+        this.isLogged = false;
     }
 
     private UserLogged(String user_name) {
         this.user_name = user_name;
         this.date_login = this.getCurrentDate();
+        this.isLogged = true;
     }
 
 // Constructores implicitos
@@ -50,8 +54,13 @@ public class UserLogged {
         return user_name;
     }
 
+    public boolean isLogged() {
+        return isLogged;
+    }
+
     public void setUser_name(String user_name) {
         this.user_name = user_name;
+        this.isLogged= true;
     }
 
     public String getDate_login() {
