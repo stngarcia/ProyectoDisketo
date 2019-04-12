@@ -3,7 +3,7 @@
 
 <div class="container">
     <section class="jumbotron text-center">
-        <br><br>
+        <br><br><br><br>
         <h1>Usuario creado</h1>
         <table class="table table-responsive">
             <tr>

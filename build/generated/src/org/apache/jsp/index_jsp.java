@@ -3,6 +3,8 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import model.UserLogged;
+import javax.servlet.http.HttpSession;
 
 public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -49,6 +51,16 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write('\r');
       out.write('\n');
+      out.write('\n');
+      out.write('\n');
+ 
+    HttpSession mySession = (HttpSession) request.getSession();
+UserLogged myUserLogged = (UserLogged) mySession.getAttribute("usuario");
+if(myUserLogged == null){
+    myUserLogged=UserLogged.createUserLog();
+}
+
+      out.write("\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html lang=\"es\">\n");
@@ -114,6 +126,11 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    </ul>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
+      out.write("            <p>\n");
+      out.write("                ");
+ myUserLogged.getUserName(); 
+      out.write("\n");
+      out.write("            </p>\n");
       out.write("        </header>");
       out.write("\r\n");
       out.write("\r\n");

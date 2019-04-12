@@ -2,11 +2,13 @@
 <%@ include file="head.jsp"%>
 
 <main role="main">
-    <section class="jumbotron text-center">
+    <section class="jumbotron text-justify">
         <div class="container">
-            <h1 class="jumbotron-heading">Inicio de sesión.</h1>
-            <p class="text-center text-muted">Ingresa tus credenciales y
-                comienza a registrar tus discografías.</p>
+            <h1 class="jumbotron-heading text-center">Inicio de sesión.</h1>
+            <p class="text-center text-muted">
+                Ingresa tus credenciales y
+                comienza a registrar tus discografías.
+            </p>
             <form id="formularioLogin" name="formularioLogin" method="post" class="form-horizontal"
                   action="signup">
                 <div class="form-group">
