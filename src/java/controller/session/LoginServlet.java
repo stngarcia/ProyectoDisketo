@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
-
 import java.util.List;
 import java.util.ArrayList;
 import model.UserLogged;
@@ -16,7 +15,7 @@ import javax.ejb.EJB;
 import entity.User;
 import model.sesionbeans.UserFacadeLocal;
 
-@WebServlet(name = "LoginServlet", urlPatterns = {"/Login"})
+@WebServlet(name = "LoginServlet", urlPatterns = {"/signup"})
 public class LoginServlet extends HttpServlet {
 
     @EJB
@@ -28,14 +27,12 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String email = request.getParameter("email");
-        String pwd = request.getParameter("pwd");
-    PrintWriter printWriter = new PrintWriter ("file.txt");
-    printWriter.println ("Weeeena aqui estoy!");
-    printWriter.println (email);
-    this.myUser =  this.myUserSB.findNamedQuery("User.findByEmail", "email", email);
-        printWriter.println (this.myUser.size());
-    printWriter.close ();       
+        String myEmail = request.getParameter("email");
+        String myPwd = request.getParameter("pwd");
+        PrintWriter printWriter = new PrintWriter("file.txt");
+        printWriter.println("Weeeena aqui estoy!");
+        printWriter.println(myEmail);
+        printWriter.close();
     }
 
 }

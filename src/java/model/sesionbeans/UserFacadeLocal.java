@@ -32,6 +32,6 @@ public interface UserFacadeLocal {
 
     List<User> findNamedQuery(String namedQueryName);
 
-    List<User> findNamedQuery(String namedQueryName, String parameterName, Object parameterValue);
+    List<User> findNamedQuery(String namedQueryName, String parameterName, String parameterValue);
 
 }

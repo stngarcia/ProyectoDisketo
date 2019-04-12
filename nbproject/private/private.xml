@@ -8,10 +8,10 @@
             <file>file:/H:/stnProyectos/progJavaWeb/DisketoApp/web/contacto-agregar-mensaje.jsp</file>
             <file>file:/H:/stnProyectos/progJavaWeb/DisketoApp/web/contacto-listado-mensajes.jsp</file>
             <file>file:/H:/stnProyectos/progJavaWeb/DisketoApp/src/java/controller/contactMessage/AddContactMessageServlet.java</file>
-            <file>file:/H:/stnProyectos/progJavaWeb/DisketoApp/web/footer.html</file>
             <file>file:/H:/stnProyectos/progJavaWeb/DisketoApp/web/js/validaFormularioContacto.js</file>
             <file>file:/H:/stnProyectos/progJavaWeb/DisketoApp/web/usuario-agregado.jsp</file>
             <file>file:/H:/stnProyectos/progJavaWeb/DisketoApp/src/java/model/sesionbeans/UserFacade.java</file>
+            <file>file:/H:/stnProyectos/progJavaWeb/DisketoApp/web/footer.jsp</file>
             <file>file:/H:/stnProyectos/progJavaWeb/DisketoApp/src/java/controller/session/LoginServlet.java</file>
             <file>file:/H:/stnProyectos/progJavaWeb/DisketoApp/src/java/controller/contactMessage/ListContactMessageServlet.java</file>
             <file>file:/H:/stnProyectos/progJavaWeb/DisketoApp/web/contacto-mensaje-agregado.jsp</file>
