@@ -2,7 +2,8 @@
 <%@ include file="head.jsp"%>
 
 <div class="container">
-    <h1>
+    <br><br><br>
+    <h1 class="text-center">
         Creación de usuarios
     </h1>
     <p class="text-center text-muted">

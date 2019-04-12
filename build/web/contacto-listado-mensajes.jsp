@@ -7,7 +7,9 @@
 <div class="container">
     <section class="jumbotron text-center">
         <br><br>
-        <h1>Lista de mensajes ingresados</h1>
+        <h1 class="text-center">
+            Lista de mensajes ingresados
+        </h1>
         <table class="table table-responsive">
             <thead>
             <th>id</th>
@@ -21,8 +23,7 @@
             <tbody>
 
 
-                <%
-                    List<Contact> myContactList = (List<Contact>) request.getAttribute("contacts");
+                <%                    List<Contact> myContactList = (List<Contact>) request.getAttribute("contacts");
                     for (Contact myContact : myContactList) {
                         out.println("<tr>");
                         out.println("<td>" + myContact.getIdContacto() + "</td>");

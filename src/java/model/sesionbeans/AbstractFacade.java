@@ -1,8 +1,12 @@
 package model.sesionbeans;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Iterator;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.persistence.Query;
 
 /**
  *
@@ -64,4 +68,15 @@ public abstract class AbstractFacade<T> {
     public List<T> findNamedQuery(String namedQueryName, String parameterName, String parameterValue) {
         return getEntityManager().createNamedQuery(namedQueryName).setParameter(parameterName, parameterValue).getResultList();
     }
+    
+        public List<T> findNamedQuery(String namedQueryName, Map<String, String> parameters) {
+            Query myQuery = getEntityManager().createNamedQuery(namedQueryName);
+            Iterator<String> myIterator = parameters.keySet().iterator();
+            while(myIterator.hasNext()){
+            String myKey = myIterator.next();    
+            myQuery.setParameter(myKey, parameters.get(myKey)); 
+            }
+        return myQuery.getResultList();
+    }
+    
 }
