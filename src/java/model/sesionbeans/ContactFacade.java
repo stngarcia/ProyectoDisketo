@@ -5,10 +5,12 @@
  */
 package model.sesionbeans;
 
+
 import entity.Contact;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 
 /**
  *
@@ -25,8 +27,10 @@ public class ContactFacade extends AbstractFacade<Contact> implements ContactFac
         return em;
     }
 
+
     public ContactFacade() {
         super(Contact.class);
     }
-    
+
+
 }

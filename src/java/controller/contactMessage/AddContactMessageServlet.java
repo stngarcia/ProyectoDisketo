@@ -1,7 +1,7 @@
 package controller.contactMessage;
 
+
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +12,7 @@ import javax.ejb.EJB;
 import entity.Contact;
 import java.util.Date;
 import model.sesionbeans.ContactFacadeLocal;
+
 
 /**
  *
@@ -38,5 +39,6 @@ public class AddContactMessageServlet extends HttpServlet {
         myContactSB.create(myContact);
         getServletContext().getRequestDispatcher("/contacto-mensaje-agregado.jsp").forward(request, response);
     }
+
 
 }

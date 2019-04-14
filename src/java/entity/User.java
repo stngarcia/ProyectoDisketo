@@ -1,5 +1,6 @@
 package entity;
 
+
 import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -17,6 +18,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
+
 /**
  *
  * @author asathor
@@ -31,7 +33,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "User.findByApellido", query = "SELECT u FROM User u WHERE u.apellido = :apellido")
     , @NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")
     , @NamedQuery(name = "User.findByPassword", query = "SELECT u FROM User u WHERE u.password = :password")
-        , @NamedQuery(name = "User.findLogin", query = "SELECT u FROM User u WHERE u.email = :email AND u.password = :password")
+    , @NamedQuery(name = "User.findLogin", query = "SELECT u FROM User u WHERE u.email = :email AND u.password = :password")
     , @NamedQuery(name = "User.findByFechaCreacion", query = "SELECT u FROM User u WHERE u.fechaCreacion = :fechaCreacion")})
 public class User implements Serializable {
 
@@ -71,9 +73,11 @@ public class User implements Serializable {
     public User() {
     }
 
+
     public User(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
+
 
     public User(Integer idUsuario, String nombre, String apellido, String email, String password, Date fechaCreacion) {
         this.idUsuario = idUsuario;
@@ -84,53 +88,66 @@ public class User implements Serializable {
         this.fechaCreacion = fechaCreacion;
     }
 
+
     public Integer getIdUsuario() {
         return idUsuario;
     }
+
 
     public void setIdUsuario(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
 
+
     public String getNombre() {
         return nombre;
     }
+
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+
     public String getApellido() {
         return apellido;
     }
+
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
 
+
     public String getEmail() {
         return email;
     }
+
 
     public void setEmail(String email) {
         this.email = email;
     }
 
+
     public String getPassword() {
         return password;
     }
+
 
     public void setPassword(String password) {
         this.password = password;
     }
 
+
     public Date getFechaCreacion() {
         return fechaCreacion;
     }
 
+
     public void setFechaCreacion(Date fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
+
 
     @Override
     public int hashCode() {
@@ -138,6 +155,7 @@ public class User implements Serializable {
         hash += (idUsuario != null ? idUsuario.hashCode() : 0);
         return hash;
     }
+
 
     @Override
     public boolean equals(Object object) {
@@ -152,9 +170,11 @@ public class User implements Serializable {
         return true;
     }
 
+
     @Override
     public String toString() {
         return "entity.User[ idUsuario=" + idUsuario + " ]";
     }
-    
+
+
 }

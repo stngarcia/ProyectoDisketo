@@ -1,7 +1,7 @@
 package controller.user;
 
+
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +12,7 @@ import javax.ejb.EJB;
 import entity.User;
 import java.util.Date;
 import model.sesionbeans.UserFacadeLocal;
+
 
 /**
  *
@@ -36,5 +37,6 @@ public class AddUserServlet extends HttpServlet {
         this.myUserSB.create((myUser));;
         getServletContext().getRequestDispatcher("/usuario-agregado.jsp").forward(request, response);
     }
+
 
 }

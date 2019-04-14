@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entity;
+
 
 import java.io.Serializable;
 import java.util.Date;
@@ -19,6 +15,7 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+
 
 /**
  *
@@ -79,9 +76,11 @@ public class Contact implements Serializable {
     public Contact() {
     }
 
+
     public Contact(Integer idContacto) {
         this.idContacto = idContacto;
     }
+
 
     public Contact(Integer idContacto, String nombre, String email, String telefono, String motivo, String textoReq, Date fechaHora) {
         this.idContacto = idContacto;
@@ -93,61 +92,76 @@ public class Contact implements Serializable {
         this.fechaHora = fechaHora;
     }
 
+
     public Integer getIdContacto() {
         return idContacto;
     }
+
 
     public void setIdContacto(Integer idContacto) {
         this.idContacto = idContacto;
     }
 
+
     public String getNombre() {
         return nombre;
     }
+
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+
     public String getEmail() {
         return email;
     }
+
 
     public void setEmail(String email) {
         this.email = email;
     }
 
+
     public String getTelefono() {
         return telefono;
     }
+
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
+
     public String getMotivo() {
         return motivo;
     }
+
 
     public void setMotivo(String motivo) {
         this.motivo = motivo;
     }
 
+
     public String getTextoReq() {
         return textoReq;
     }
+
 
     public void setTextoReq(String textoReq) {
         this.textoReq = textoReq;
     }
 
+
     public Date getFechaHora() {
         return fechaHora;
     }
 
+
     public void setFechaHora(Date fechaHora) {
         this.fechaHora = fechaHora;
     }
+
 
     @Override
     public int hashCode() {
@@ -155,6 +169,7 @@ public class Contact implements Serializable {
         hash += (idContacto != null ? idContacto.hashCode() : 0);
         return hash;
     }
+
 
     @Override
     public boolean equals(Object object) {
@@ -169,9 +184,11 @@ public class Contact implements Serializable {
         return true;
     }
 
+
     @Override
     public String toString() {
         return "entity.Contact[ idContacto=" + idContacto + " ]";
     }
-    
+
+
 }

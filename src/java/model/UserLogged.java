@@ -1,9 +1,11 @@
 package model;
 
 // Importaciones.
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 
 /**
  *
@@ -21,9 +23,11 @@ public class UserLogged {
     }
 
 // Constructores implicitos
+
     public static UserLogged createUserLog() {
         return new UserLogged();
     }
+
 
     /*
 * getCurrentDate()
@@ -35,18 +39,22 @@ public class UserLogged {
         return myFormat.format(myDate);
     }
 
+
     // Accesadores y mutadores.
     public String getUserName() {
         return userName;
     }
 
+
     public String getDateLogin() {
         return dateLogin;
     }
 
+
     public boolean isLogged() {
         return logged;
     }
+
 
     public void signUp(String userName) {
         this.userName = userName;
@@ -54,10 +62,12 @@ public class UserLogged {
         this.logged = true;
     }
 
+
     public void signOut() {
         this.userName = "Anonimo";
         this.dateLogin = this.getCurrentDate();
         this.logged = false;
     }
+
 
 }

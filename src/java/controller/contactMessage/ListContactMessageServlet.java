@@ -1,7 +1,7 @@
 package controller.contactMessage;
 
+
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import javax.ejb.EJB;
 import entity.Contact;
 import model.sesionbeans.ContactFacadeLocal;
+
 
 /**
  *
@@ -31,11 +32,12 @@ public class ListContactMessageServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         this.myContactList = new ArrayList<Contact>();
-        if (this.myContactListSB.count() != 0){
-                this.myContactList = this.myContactListSB.findAll();
+        if (this.myContactListSB.count() != 0) {
+            this.myContactList = this.myContactListSB.findAll();
         }
         request.setAttribute("contacts", this.myContactListSB.findAll());
         getServletContext().getRequestDispatcher("/contacto-listado-mensajes.jsp").forward(request, response);
     }
+
 
 }

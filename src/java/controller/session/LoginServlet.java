@@ -9,11 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.io.PrintWriter;
 
 import java.util.List;
-import java.util.ArrayList;
-import model.UserLogged;
 import javax.ejb.EJB;
 import entity.User;
 import model.sesionbeans.UserFacadeLocal;
