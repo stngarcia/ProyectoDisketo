@@ -16,25 +16,27 @@
     <h:body>
 
         <div id="header" class="center_content">
-            <nav id="menu">
-                <h:form>
-                    <p:growl id="messages"/>
-                    <p:menubar>
-                        <p:menuitem>
-                            <h:graphicImage value="/resources/img/disco.png" 
-                                            style="margin-left: 10px; " width="50px" height="70px">
-                            </h:graphicImage>
-                        </p:menuitem>
-                        <p:menuitem value="Disketo" url="#" />
-                        <p:submenu label="Temas">
-                            <p:menuitem value="Claro" url="#" />
-                            <p:separator />
-                            <p:menuitem value="Oscuro" url="#" />
-                        </p:submenu>
-                        <p:menuitem value="Cerrar sesión" url="#" />
-                    </p:menubar>
-                </h:form>
-            </nav>
+            <p:panel style="width: 100%;">
+                <nav id="menu">
+                    <h:form>
+                        <p:growl id="messages"/>
+                        <p:menubar>
+                            <p:menuitem>
+                                <h:graphicImage value="/resources/img/disco.png" 
+                                                style="margin-left: 10px; " width="50px" height="70px">
+                                </h:graphicImage>
+                            </p:menuitem>
+                            <p:menuitem value="Disketo" url="administrador.xhtml" />
+                            <p:submenu label="Temas">
+                                <p:menuitem value="Claro" url="#" />
+                                <p:separator />
+                                <p:menuitem value="Oscuro" url="#" />
+                            </p:submenu>
+                            <p:menuitem value="Cerrar sesión" url="#" />
+                        </p:menubar>
+                    </h:form>
+                </nav>
+            </p:panel>
         </div>
 
 
@@ -46,8 +48,10 @@
         <div id="bottom">
             <footer>
                 <h:form>
-                    <p:panel style="width:100%; align-content: center ">
-                        <p style="width:100%; text-align: center">Disketo: Creado por Francisco Reyes - Daniel García, 2019.</p>
+                    <p:panel style="width:100%; background-color: lightgray; ">
+                        <p style="width: 100%; text-align: center;">
+                            Disketo: Creado por Francisco Reyes - Daniel García, 2019.
+                        </p>
                     </p:panel>
                 </h:form>
             </footer>

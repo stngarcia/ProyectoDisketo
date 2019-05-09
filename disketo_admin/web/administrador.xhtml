@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="WEB-INF/facelets/templates/maqueta.xhtml">
+            <ui:define name="content">
+
+                <h3 style="text-decoration: underline; text-align: center;">Mantenedores disponibles</h3>
+                <p:panelGrid style="margin-top:20px;">
+                    <f:facet name="header">
+                        <p:row>
+                            <p:column colspan="2">Artistas</p:column>
+                            <p:column colspan="2">Albumnes</p:column>
+                        </p:row>
+                    </f:facet>
+                    <p:row>
+                        <p:column>
+                            <h:graphicImage value="/resources/img/artist01.png" 
+                                            style="margin-left: 10px; " width="75px" height="75px">
+                            </h:graphicImage>
+                        </p:column>
+                        <p:column>
+                            <ul>
+                                <li>Registra tus artistas.</li>
+                                <li>Edita su información.</li>
+                                <li>Elimina un artista.</li>
+                                <li>Lista tus artistas registrados.</li>
+                            </ul>
+                        </p:column>
+
+                        <p:column >
+                            <h:graphicImage value="/resources/img/album01.png" 
+                                            style="margin-left: 10px; " width="75px" height="75px">
+                            </h:graphicImage>
+                        </p:column>
+                        <p:column>
+                            <ul>
+                                <li>Registra tus albumnes.</li>
+                                <li>Edita su información.</li>
+                                <li>Quita un album de tu colección.</li>
+                                <li>Lista tus albumnes.</li>
+                            </ul>
+                        </p:column>
+                    </p:row>
+                    <p:row>
+                        <p:column colspan="2">
+                            <p:commandButton value="Ir" id="btnArtista" 
+                                             action="#{buttonView.buttonAction}" update="" 
+                                             style="margin-right:20px;" />
+                        </p:column>
+                        <p:column colspan="2">
+                            <p:commandButton value="Ir" id="btnAlbum" 
+                                             action="#{buttonView.buttonAction}" update="" 
+                                             style="margin-right:20px;" />
+                        </p:column>
+                    </p:row>
+
+                    <p:row></p:row>
+
+                    <f:facet name="header">
+                        <p:row>
+                            <p:column colspan="2">Generos</p:column>
+                            <p:column colspan="2">Discografías</p:column>
+                        </p:row>
+                    </f:facet>
+                    <p:row>
+                        <p:column>
+                            <h:graphicImage value="/resources/img/genre01.png" 
+                                            style="margin-left: 10px; " width="75px" height="75px">
+                            </h:graphicImage>
+                        </p:column>
+                        <p:column>
+                            <ul>
+                                <li>Registra tus generos musicales.</li>
+                                <li>Edita su información.</li>
+                                <li>Quita un genero musical.</li>
+                                <li>Lista tus generos favoritos.</li>
+                            </ul>
+                        </p:column>
+
+                        <p:column >
+                            <h:graphicImage value="/resources/img/discography01.png" 
+                                            style="margin-left: 10px; " width="75px" height="75px">
+                            </h:graphicImage>
+                        </p:column>
+                        <p:column>
+                            <ul>
+                                <li>Registra tus discografías.</li>
+                                <li>Edita su información.</li>
+                                <li>Quita una discografía.</li>
+                                <li>Lista tus colecciones.</li>
+                            </ul>
+                        </p:column>
+                    </p:row>
+                    <p:row>
+                        <p:column colspan="2">
+                            <p:commandButton value="Ir" id="btnGenero" 
+                                             action="#{buttonView.buttonAction}" update="" 
+                                             style="margin-right:20px;" />
+                        </p:column>
+                        <p:column colspan="2">
+                            <p:commandButton value="Ir" id="btnDiscografia" 
+                                             action="#{buttonView.buttonAction}" update="" 
+                                             style="margin-right:20px;" />
+                        </p:column>
+                    </p:row>                    
+                </p:panelGrid>       
+
+
+
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
