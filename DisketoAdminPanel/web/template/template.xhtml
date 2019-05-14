@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="resources/css/default.css"/>
+        <h:outputStylesheet name="resources/css/cssLayout.css"/>
+        <title>Disketo - Panel de administración de discografías.</title>
+    </h:head>
+
+    <h:body>
+        <div id="content">
+             <p:panel style="width:100%;"> 
+                 
+                <!-- Cabecera de la pagina -->
+                <div id="header" class="center_content">
+                    <nav id="menu">
+                        <ui:include src="header.xhtml">
+                        </ui:include>
+                    </nav>
+                </div>
+
+
+                <!-- Cuerpo de la pagina -->
+                <div id="content" class="center_content">
+                    <ui:insert name="contenido">Content</ui:insert>
+                </div>
+
+
+                <!-- Pie de la pagina -->
+                <div id="footer">
+                    <footer>
+                        <ui:include src="footer.xhtml">
+                        </ui:include>
+                    </footer>
+                </div>
+
+            </p:panel>
+        </div>
+    </h:body>
+
+</html>

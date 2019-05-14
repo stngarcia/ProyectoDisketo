@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition>
+
+        <p:dialog id="AlbumEditDlg" widgetVar="AlbumEditDialog" modal="true" resizable="false" appendTo="@(body)" header="#{bundle.EditAlbumTitle}">
+            <h:form id="AlbumEditForm">
+                <h:panelGroup id="display">
+                    <p:panelGrid columns="2" rendered="#{albumController.selected != null}">
+                        <p:outputLabel value="#{bundle.EditAlbumLabel_idAlbum}" for="idAlbum" />
+                        <p:inputText id="idAlbum" value="#{albumController.selected.idAlbum}" title="#{bundle.EditAlbumTitle_idAlbum}" required="true" requiredMessage="#{bundle.EditAlbumRequiredMessage_idAlbum}"/>
+                        <p:outputLabel value="#{bundle.EditAlbumLabel_nombreAlbum}" for="nombreAlbum" />
+                        <p:inputText id="nombreAlbum" value="#{albumController.selected.nombreAlbum}" title="#{bundle.EditAlbumTitle_nombreAlbum}" required="true" requiredMessage="#{bundle.EditAlbumRequiredMessage_nombreAlbum}"/>
+                        <p:outputLabel value="#{bundle.EditAlbumLabel_lanzamientoAlbum}" for="lanzamientoAlbum" />
+                        <p:inputText id="lanzamientoAlbum" value="#{albumController.selected.lanzamientoAlbum}" title="#{bundle.EditAlbumTitle_lanzamientoAlbum}" required="true" requiredMessage="#{bundle.EditAlbumRequiredMessage_lanzamientoAlbum}"/>
+                        <p:outputLabel value="#{bundle.EditAlbumLabel_edicionAlbum}" for="edicionAlbum" />
+                        <p:inputText id="edicionAlbum" value="#{albumController.selected.edicionAlbum}" title="#{bundle.EditAlbumTitle_edicionAlbum}" required="true" requiredMessage="#{bundle.EditAlbumRequiredMessage_edicionAlbum}"/>
+                        <p:outputLabel value="#{bundle.EditAlbumLabel_idFormato}" for="idFormato" />
+                        <p:selectOneMenu id="idFormato" value="#{albumController.selected.idFormato}" required="true" requiredMessage="#{bundle.EditAlbumRequiredMessage_idFormato}">
+                            <f:selectItem itemLabel="#{bundle.SelectOneMessage}"/>
+                            <f:selectItems value="#{formatoController.itemsAvailableSelectOne}"
+                                           var="idFormatoItem"
+                                           itemValue="#{idFormatoItem}"/>
+                        </p:selectOneMenu>
+                    </p:panelGrid>
+                    <p:commandButton actionListener="#{albumController.update}" value="#{bundle.Save}" update="display,:AlbumListForm:datalist,:growl" oncomplete="handleSubmit(args, 'AlbumEditDialog');"/>
+                    <p:commandButton value="#{bundle.Cancel}" onclick="AlbumEditDialog.hide()"/>
+                </h:panelGroup>
+            </h:form>
+        </p:dialog>
+
+    </ui:composition>
+</html>
