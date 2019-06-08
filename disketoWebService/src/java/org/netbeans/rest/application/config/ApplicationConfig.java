@@ -22,10 +22,10 @@ public class ApplicationConfig extends Application {
      * Do not modify addRestResourceClasses() method. It is automatically populated with all resources defined in the project. If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(service.webservice.ArtistaByNameResource.class);
-        resources.add(service.webservice.ArtistaResource.class);
-        resources.add(service.webservice.EstadoResource.class);
-        resources.add(service.webservice.GeneroResource.class);
+        resources.add(service.ArtistaByNameResource.class);
+        resources.add(service.ArtistaResource.class);
+        resources.add(service.EstadoResource.class);
+        resources.add(service.GeneroResource.class);
     }
 
 
