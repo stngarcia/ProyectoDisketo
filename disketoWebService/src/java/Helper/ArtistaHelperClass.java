@@ -25,19 +25,20 @@ public class ArtistaHelperClass extends SelectQuery implements ArtistaHelper {
 
     @Override
     public List getArtistas() throws Exception {
-        List<Artista> myArtistList;
-        myArtistList = queryDefine().list();
+        querySet();
+        List<Artista> myArtistList = myQuery.list();
+        queryClose();
         return myArtistList;
     }
 
 
     @Override
     public List getArtistaByName(String nombreArtista) throws Exception {
-        List<Artista> myArtistList;
         queryWhere = "WHERE a.nombreArtista= :nombreArtista ";
-        Query myQuery = queryDefine();
-        myQuery.setParameter("nombreArtista", nombreArtista);
-        myArtistList = myQuery.list();
+        querySet();
+        parameterSet("nombreArtista", nombreArtista);
+        List<Artista> myArtistList = myQuery.list();
+        queryClose();
         return myArtistList;
     }
 

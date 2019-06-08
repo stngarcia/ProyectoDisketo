@@ -24,7 +24,9 @@ public class EstadoHelperClass extends SelectQuery implements EstadoHelper {
     @Override
     public List getEstados() throws Exception {
         List<Estado> myList;
-        myList = queryDefine().list();
+        querySet();
+        myList = myQuery.list();
+        queryClose();
         return myList;
     }
 

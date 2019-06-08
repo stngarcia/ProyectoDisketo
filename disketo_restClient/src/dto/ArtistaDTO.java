@@ -1,22 +1,18 @@
-package disketo_restclient.dto;
+package dto;
 
 /**
  * @author asathor
  */
-public class Artista {
+public class ArtistaDTO {
 
     private Integer idArtista;
-    private Estado estado;
-    private Genero genero;
     private String nombreArtista;
     private String origenArtista;
     private Integer formadoArtista;
     private String tematicaArtista;
 
-    public Artista() {
+    public ArtistaDTO() {
         idArtista = 0;
-        estado = new Estado();
-        genero = new Genero();
         nombreArtista = "";
         origenArtista = "";
         formadoArtista = 0;
@@ -31,26 +27,6 @@ public class Artista {
 
     public void setIdArtista(Integer idArtista) {
         this.idArtista = idArtista;
-    }
-
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
-
-
-    public Genero getGenero() {
-        return genero;
-    }
-
-
-    public void setGenero(Genero genero) {
-        this.genero = genero;
     }
 
 

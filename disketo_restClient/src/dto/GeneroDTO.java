@@ -1,14 +1,14 @@
-package disketo_restclient.dto;
+package dto;
 
 /**
  * @author asathor
  */
-public class Genero {
+public class GeneroDTO {
 
     private Integer idGenero;
     private String nombreGenero;
 
-    public Genero() {
+    public GeneroDTO() {
         this.idGenero = 0;
         this.nombreGenero = "";
     }

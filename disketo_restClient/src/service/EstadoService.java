@@ -1,29 +1,29 @@
-package disketo_restclient.client;
+package service;
 
 import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.WebTarget;
 
 
-/** Jersey REST client generated for REST resource:we [genero]<br>
+/** Jersey REST client generated for REST resource:we [estado]<br>
  * USAGE:
  * <pre>
- *        GeneroClient client = new GeneroClient();
+ *        EstadoClient client = new EstadoClient();
  *        Object response = client.XXX(...);
  *        // do whatever with response
  *        client.close();
  * </pre>
  * @author asathor
  */
-public class GeneroClient {
+public class EstadoService {
 
     private WebTarget webTarget;
     private Client client;
     private static final String BASE_URI = "http://localhost:8080/disketoWebService/webresources/";
 
-    public GeneroClient() {
+    public EstadoService() {
         client = javax.ws.rs.client.ClientBuilder.newClient();
-        webTarget = client.target(BASE_URI).path("genero");
+        webTarget = client.target(BASE_URI).path("estado");
     }
 
 
@@ -31,7 +31,7 @@ public class GeneroClient {
      * @param responseType Class representing the response
      * @return response object (instance of responseType class)
      */
-    public <T> T getGeneros(Class<T> responseType) throws ClientErrorException {
+    public <T> T getEstados(Class<T> responseType) throws ClientErrorException {
         return webTarget.request().get(responseType);
     }
 

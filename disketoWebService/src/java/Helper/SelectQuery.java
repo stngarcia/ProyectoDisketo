@@ -11,6 +11,7 @@ import org.hibernate.Transaction;
 public abstract class SelectQuery {
 
     protected Session mySession;
+    protected Query myQuery;
     protected String querySelect;
     protected String queryFrom;
     protected String queryWhere;
@@ -25,10 +26,19 @@ public abstract class SelectQuery {
     }
 
 
-    protected Query queryDefine() throws Exception {
+    protected void querySet() throws Exception {
         Transaction myTransaction = this.mySession.beginTransaction();
-        Query myQuery = this.mySession.createQuery(querySelect + queryFrom + queryWhere + queryOrderBy);
-        return myQuery;
+        myQuery = this.mySession.createQuery(querySelect + queryFrom + queryWhere + queryOrderBy);
+    }
+
+
+    protected void parameterSet(String paramName, Object paramValue) {
+        myQuery.setParameter(paramName, paramValue);
+    }
+
+
+    protected void queryClose() {
+        this.mySession.close();
     }
 
 

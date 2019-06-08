@@ -23,8 +23,9 @@ public class GeneroHelperClass extends SelectQuery implements GeneroHelper {
 
     @Override
     public List getGeneros() throws Exception {
-        List<Genero> myList;
-        myList = queryDefine().list();
+        querySet();
+        List<Genero> myList = myQuery.list();
+        queryClose();
         return myList;
     }
 

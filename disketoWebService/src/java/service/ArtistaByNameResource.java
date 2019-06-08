@@ -30,7 +30,7 @@ public class ArtistaByNameResource {
             return mapper.writeValueAsString(miLista);
         } catch (Exception ex) {
             Logger.getLogger(ArtistaByNameResource.class.getName()).log(Level.SEVERE, null, ex);
-            return "";
+            return "Error: " + ex.getMessage();
         }
     }
 

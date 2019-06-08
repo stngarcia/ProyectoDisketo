@@ -1,4 +1,4 @@
-package disketo_restclient.client;
+package service;
 
 import javax.ws.rs.ClientErrorException;
 import javax.ws.rs.client.Client;
@@ -15,13 +15,13 @@ import javax.ws.rs.client.WebTarget;
  * </pre>
  * @author asathor
  */
-public class ArtistClient {
+public class ArtistService {
 
     private WebTarget webTarget;
     private Client client;
     private static final String BASE_URI = "http://localhost:8080/disketoWebService/webresources/";
 
-    public ArtistClient() {
+    public ArtistService() {
         client = javax.ws.rs.client.ClientBuilder.newClient();
         webTarget = client.target(BASE_URI).path("artista");
     }

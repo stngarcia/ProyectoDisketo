@@ -1,14 +1,14 @@
-package disketo_restclient.dto;
+package dto;
 
 /**
  * @author asathor
  */
-public class Estado {
+public class EstadoDTO {
 
     private Integer idEstado;
     private String nombreEstado;
 
-    public Estado() {
+    public EstadoDTO() {
         this.idEstado = 0;
         this.nombreEstado = "";
     }
